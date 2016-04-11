@@ -32,8 +32,12 @@
     "dataSource": "db",
     "public": false
   },
-  "Customer": {
+  "Customer1": {
     "dataSource": "db",
+    "public": true
+  },
+  "Customer2": {
+    "dataSource": "db2",
     "public": true
   }
 }

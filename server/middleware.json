@@ -32,7 +32,12 @@
   },
   "session": {},
   "auth": {},
-  "parse": {},
+  "parse": {
+    "./middleware/tenant-parser": {
+      "paths": "/api/customers"
+    },
+    "./middleware/model-resolver": {}
+  },
   "routes": {
     "loopback#rest": {
       "paths": [
