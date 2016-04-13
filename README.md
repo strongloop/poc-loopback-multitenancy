@@ -22,6 +22,7 @@ START                       :
                             :                      generate physical model using
 +---[{relevant models}]<--------Customer.find()----logical model and attach it
 |                           :                      to corresponding datasource
+v                           :
 END                         :
 ```
 
@@ -57,15 +58,13 @@ generated physical model.
 We basically use a combination of middleware to get the tenant id and use it to
 determine which logical model and datasource to use. The logical model is used
 to generate a physical model at runtime using the provided tenant id. In this
-case, we've preconfigured the logical model (in model.json files) before the
+case, we've preconfigured the logical model (in `model.json` files) before the
 application is started, but the physical models (and their attached
 datasources) are determined dynamically (using the preconfigured information
 from `tenant-config.json`) when the requests are received.
 
 ## Considerations
 
-- There are probably better ways to parse the API endpoint to determine which
-  model to use (can probably make more use of strong-remoting here)
 - The tenant configuration is read from a file in this POC, we should probably
   allow for runtime config injection (config level, model level, request level,
   etc)
