@@ -22,8 +22,7 @@ START                       :
                             :                      generate physical model using
 +--[{relevant models}]<----------Customer.find()---logical model and attach it
 |                           :                      to corresponding datasource
-v                           :                      dynamically
-END                         :
+END                         :                      dynamically
 ```
 
 ## How it works
