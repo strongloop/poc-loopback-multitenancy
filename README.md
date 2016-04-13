@@ -20,9 +20,9 @@ START                       :
                             :                                         |
                             :                                         v
                             :                      generate physical model using
-+---[{relevant models}]<--------Customer.find()----logical model and attach it
++--[{relevant models}]<----------Customer.find()---logical model and attach it
 |                           :                      to corresponding datasource
-v                           :
+v                           :                      dynamically
 END                         :
 ```
 
