@@ -36,7 +36,9 @@
     "./middleware/tenant-parser": {
       "paths": "/api/customers"
     },
-    "./middleware/model-resolver": {}
+    "./middleware/model-resolver": {
+      "paths": "/api/*"
+    }
   },
   "routes": {
     "loopback#rest": {

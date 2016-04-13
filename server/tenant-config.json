@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "modelMap": {
+      "Customer": "mysql"
+    }
+  },
+  {
+    "id": "2",
+    "modelMap": {
+      "Customer": "mongodb"
+    }
+  }
+]

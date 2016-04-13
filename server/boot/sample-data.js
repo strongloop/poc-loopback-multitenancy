@@ -1,28 +1,39 @@
 var async = require('async');
+var jdb = require('loopback-datasource-juggler');
+var DataSource = jdb.DataSource;
+var ModelBuilder = jdb.ModelBuilder;
 
 module.exports = function(app, cb) {
-  var customer1s = [
-    {name: 'Andy'},
-    {name: 'Bob'},
-    {name: 'Carol'},
-  ];
-  var customer2s = [
-    {name: 'Dan'},
-    {name: 'Eric'},
-    {name: 'Francis'},
-  ];
+  function createCustomers(tenantId, dsName, data, cb) {
+    var ds = new DataSource({
+      connector: 'memory'
+    });
+    app.datasources[dsName] = ds;
 
-  var Customer1 = app.datasources.db.models.Customer1;
-  var Customer2 = app.datasources.db2.models.Customer2;
+    var builder = new ModelBuilder();
+    var Customer = builder.define('Customer', {
+      name: String
+    });
+    ds.attach(Customer);
+
+    Customer.create(data, function(err, customers) {
+      if (err) throw err;
+      console.log('Tenant %d: %j', tenantId, customers);
+      cb();
+    });
+  }
 
   async.parallel([
-    Customer1.create.bind(Customer1, customer1s),
-    Customer2.create.bind(Customer2, customer2s),
-  ], function(err, customers) {
-    if (err) throw err;
-
-    console.log('CREATED %j', customers);
-
-    cb();
-  });
+    createCustomers.bind(null, 1, 'mysql', [
+      {name: 'Andy'},
+      {name: 'Bob'},
+      {name: 'Carol'},
+    ]),
+    createCustomers.bind(null, 2, 'mongodb', [
+      {name: 'Dan'},
+      {name: 'Eric'},
+      {name: 'Francis'},
+    ]),
+  ], cb);
 };
+
