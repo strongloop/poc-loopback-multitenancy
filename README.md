@@ -13,7 +13,6 @@ Basic proof of concept for multitenancy in LoopBack.
 
 ```
 START                       :
-^                           :
 |                           :   +---------------+             +--------------+
 +--/api/customers?tenant=1----->|tenant resolver|--tenantId-->|model resolver|
                             :   +---------------+             +--------------+
@@ -21,7 +20,6 @@ START                       :
                             :                                         v
 +--[{relevant models}]<--------------------------- (Customer + tenantId).find()
 |                           :
-v
 END                         :
 ```
 
