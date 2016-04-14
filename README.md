@@ -76,7 +76,7 @@ from `tenant-config.json`) when the requests are received.
   flexibile model should be considered (Loopback does not allow for duplicate
   model names ATM)
 - Maybe all apps should be multitenant capable out of box (ie. default id to
-  tenant 1) to simply internal architecture. Simply turning off a config should
+  tenant 1) to simplify internal architecture. Simply turning off a config should
   allow us to reuse the same codebase
 - Interestingly, when creating sample data, not hardcoding datasource
   configuration during app boot made it more difficult to insert data into
