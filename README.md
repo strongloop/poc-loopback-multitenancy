@@ -72,7 +72,7 @@ from `tenant-config.json`) when the requests are received.
   `tenant-config.json`)
 - Shared definitions in this POC are simple, but real world scenarios may
   require multiple `Customer` models, each being slightly different depending on
-  which datasource is used (ie. `elasticsearch` vs `oracle, etc). A more
+  which datasource is used (ie. `elasticsearch` vs `oracle`, etc). A more
   flexibile model should be considered (Loopback does not allow for duplicate
   model names ATM)
 - Maybe all apps should be multitenant capable out of box (ie. default id to
