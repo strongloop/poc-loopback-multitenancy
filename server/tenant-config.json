@@ -2,13 +2,19 @@
   {
     "id": "1",
     "modelMap": {
-      "Customer": "mysql"
+      "Customer": {
+        "dataSource": "db",
+        "model": "Customer"
+      }
     }
   },
   {
     "id": "2",
     "modelMap": {
-      "Customer": "mongodb"
+      "Customer": {
+        "dataSource": "db2",
+        "model": "Customer"
+      }
     }
   }
 ]

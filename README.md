@@ -83,6 +83,12 @@ from `tenant-config.json`) when the requests are received.
   datasources that do not exist during app boot up (but are needed during app
   runtime -- [see sample-data.js](server/boot/sample-data.js#L8-L11))
 
+- Figure out what is required in the schemas
+- The tenant parser middleware can potentially have multiple schemes
+  - first segment of path is the tenant
+  - `tenantId` as part of the api call
+  - map credentials to the tenant id
+
 ## Tests
 
 Run `npm test` in the project root.

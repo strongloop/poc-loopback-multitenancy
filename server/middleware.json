@@ -34,10 +34,10 @@
   "auth": {},
   "parse": {
     "./middleware/tenant-parser": {
-      "paths": "/api/customers"
+      "paths": "/api"
     },
     "./middleware/model-resolver": {
-      "paths": "/api/*"
+      "paths": "/api"
     }
   },
   "routes": {
