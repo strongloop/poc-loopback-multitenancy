@@ -1,5 +1,7 @@
 module.exports = function() {
   return function modelResolver(req, res, next) {
+    console.log('MR middleware triggered');
+
     var app = req.app;
     var tenantId = req.tenantId;
 
