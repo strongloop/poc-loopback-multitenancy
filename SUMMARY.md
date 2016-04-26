@@ -29,7 +29,7 @@ END                        :                       dynamically
   - More flexible
   - No collision issues with models (each subapp is has it's own registry)
     - There can actually be collisions if one subapp uses the same model name
-      multiple times, but is a rare case
+      multiple times, rare case
 
 ```
 START                      :
