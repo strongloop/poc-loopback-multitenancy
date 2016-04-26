@@ -3,7 +3,7 @@ var assert = require('assert');
 var req = require('supertest');
 
 describe('multitenancy', function() {
-  before(function startApiServer(done) {
+  before('start api server', function(done) {
     api.start();
     api.once('started', done);
   });
