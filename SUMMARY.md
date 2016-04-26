@@ -43,7 +43,7 @@ START                      :
                            :                                         v
                            :                                 +--------------+
 +--[{relevant models}]<----:-----Customer.find()-------------|model resolver|
-|                          :                                 +--------------+
+|                          :  (via strong-remoting)          +--------------+
 END                        :
 ```
 
