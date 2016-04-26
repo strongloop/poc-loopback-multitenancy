@@ -42,8 +42,8 @@ START                      :
                            :                                         |
                            :                                         v
                            :                                 +--------------+
-+--[{relevant models}]<----:-----Customer.find()-------------|model resolver|
-|                          :  (via strong-remoting)          +--------------+
++--[{relevant models}]<----:--------Customer.find()----------|model resolver|
+|                          :     (via strong-remoting)       +--------------+
 END                        :
 ```
 
