@@ -5,16 +5,46 @@ to identify the building blocks and design choices.
 
 ## Possible designs
 
-- Middleware + Config files
+- Middleware + config files
   - Simpler
   - Quicker to implement
   - Must use namespace to resolve model naming collisions
+
+
+```
+START                      :
+|                          :   +---------------+             +--------------+
++--/api/customers?tenant=1---->|tenant resolver|--tenantId-->|model resolver|
+                           :   +---------------+             +--------------+
+                           :                                         |
+                           :                                         v
+                           :                       generate physical model using
++--[{relevant models}]<---------Customer.find()----logical model and attach it
+|                          : (via strong-remoting) to corresponding datasource
+END                        :                       dynamically
+```
+
 - Subapps with independent registries
   - Complex
   - More flexible
   - No collision issues with models (each subapp is has it's own registry)
     - There can actually be collisions if one subapp uses the same model name
       multiple times, but is a rare case
+
+```
+START                      :
+|                          :   +---------------+             +---------------+
++--/api/customers?tenant=1---->|tenant resolver|--tenantId-->|subapp resolver|
+                           :   +---------------+             +---------------+
+                           :                                         |
+                           :                                       app 1
+                           :                                         |
+                           :                                         v
+                           :                                 +--------------+
++--[{relevant models}]<----:-----Customer.find()-------------|model resolver|
+|                          :                                 +--------------+
+END                        :
+```
 
 ## Components (building blocks)
 
