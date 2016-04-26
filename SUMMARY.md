@@ -5,11 +5,11 @@ to identify the building blocks and design choices.
 
 ## Possible designs
 
-- Middleware + config files
-  - Simpler
-  - Quicker to implement
-  - Must use namespace to resolve model naming collisions
+### Middleware + config files
 
+- Simpler
+- Quicker to implement
+- Must use namespace to resolve model naming collisions
 
 ```
 START                      :
@@ -24,12 +24,13 @@ START                      :
 END                        :                       dynamically
 ```
 
-- Subapps with independent registries
-  - Complex
-  - More flexible
-  - No collision issues with models (each subapp is has it's own registry)
-    - There can actually be collisions if one subapp uses the same model name
-      multiple times, rare case
+### Subapps with independent registries
+
+- Complex
+- More flexible
+- No collision issues with models (each subapp is has it's own registry)
+  - There can actually be collisions if one subapp uses the same model name
+    multiple times, rare case
 
 ```
 START                      :
