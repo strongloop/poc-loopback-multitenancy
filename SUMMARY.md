@@ -70,6 +70,8 @@ END                        :
   - Generate physical model from aforementioned
 - HTTP method parser
   - HTTP method to strong-remoting mapping
+- Subapps
+  - Full blown LB apps with independent registries
 
 ## Decision points and design considerations
 
@@ -95,3 +97,4 @@ END                        :
   - Do we want to go with the subapps approach?
   - Since each subapp has it own registries, lower odds of collision
   - More complicated
+  - May have to deal with routing conflicts/resolution issues
