@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2016. All Rights Reserved.
+// Node module: poc-loopback-multitenancy
+
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 

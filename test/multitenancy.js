@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2016. All Rights Reserved.
+// Node module: poc-loopback-multitenancy
+
 var api = require('../server/server');
 var assert = require('assert');
 var req = require('supertest');

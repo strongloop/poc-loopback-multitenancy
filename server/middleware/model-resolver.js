@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2016. All Rights Reserved.
+// Node module: poc-loopback-multitenancy
+
 module.exports = function() {
   return function modelResolver(req, res, next) {
     console.log('MR middleware triggered');

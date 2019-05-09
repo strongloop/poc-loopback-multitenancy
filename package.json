@@ -28,5 +28,6 @@
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "poc-loopback-multitenancy"
+  "description": "poc-loopback-multitenancy",
+  "author": "IBM Corp."
 }

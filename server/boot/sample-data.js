@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2016. All Rights Reserved.
+// Node module: poc-loopback-multitenancy
+
 var async = require('async');
 
 module.exports = function(app, cb) {
